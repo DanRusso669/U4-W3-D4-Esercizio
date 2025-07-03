@@ -28,6 +28,13 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<Participation> participationList;
 
+    @ManyToMany(mappedBy = "participants")
+    private List<AthleticsCompetition> athleticsCompetitions;
+
+    @OneToMany(mappedBy = "winner")
+    private List<AthleticsCompetition> competitionList;
+
+
     public Person() {
     }
 

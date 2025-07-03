@@ -1,6 +1,6 @@
 package danielerusso.entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -8,7 +8,14 @@ import java.util.List;
 @Entity
 
 public class AthleticsCompetition extends Event {
+    @ManyToMany
+    @JoinTable(name = "athletics_competitions_people",
+            joinColumns = @JoinColumn(name = "athletics_competitions", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "person", nullable = false))
     private List<Person> participants;
+
+    @ManyToOne
+    @JoinColumn(name = "winner")
     private Person winner;
 
     public AthleticsCompetition() {

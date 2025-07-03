@@ -10,6 +10,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -32,6 +34,15 @@ public class Application {
         Person person2 = new Person("Giuseppe", "Verdi", "verdibeppe@gmail.com", LocalDate.of(1813, 10, 10), GenderType.MALE);
         Person person3 = new Person("Marie", "Curie", "curiemarie@gmail.com", LocalDate.of(1867, 11, 7), GenderType.FEMALE);
 
+        Person p1FromDB = pd.findById(1);
+        Person p2FromDB = pd.findById(2);
+        Person p3FromDB = pd.findById(3);
+
+        List<Person> groupOfPeople = new ArrayList<>();
+        groupOfPeople.add(p1FromDB);
+        groupOfPeople.add(p2FromDB);
+        groupOfPeople.add(p3FromDB);
+
 //        ld.save(location1);
 //        ld.save(location2);
 //        ld.save(location3);
@@ -51,6 +62,13 @@ public class Application {
         SoccerMatch soccerMatch1 = new SoccerMatch("Derby", LocalDate.of(2025, 11, 04), "Milan-Napoli", EventType.PUBBLIC, 50, loc3, "Milan", "Inter", "Milan", 2, 1);
         SoccerMatch soccerMatch2 = new SoccerMatch("Derby", LocalDate.of(2025, 11, 04), "Juventus-Inter", EventType.PUBBLIC, 50, loc2, "Juventus", "Torino", "Torino", 3, 2);
         SoccerMatch soccerMatch3 = new SoccerMatch("Derby", LocalDate.of(2025, 11, 04), "Genoa-Atalanta", EventType.PUBBLIC, 50, loc1, "Genoa", "Atalanta", null, 2, 2);
+
+        AthleticsCompetition athComp1 = new AthleticsCompetition("Derby", LocalDate.of(2025, 11, 04), "Genoa-Atalanta", EventType.PUBBLIC, 50, loc1, groupOfPeople, p1FromDB);
+        AthleticsCompetition athComp2 = new AthleticsCompetition("Derby", LocalDate.of(2025, 11, 04), "Balla", EventType.PUBBLIC, 50, loc1, groupOfPeople, p2FromDB);
+        AthleticsCompetition athComp3 = new AthleticsCompetition("Derby", LocalDate.of(2025, 11, 04), "Danza", EventType.PUBBLIC, 50, loc1, groupOfPeople, p3FromDB);
+
+//        ed.save(athComp2);
+//        ed.save(athComp3);
 
 //        ed.save(soccerMatch1);
 //        ed.save(soccerMatch2);

@@ -10,7 +10,7 @@
         <class>danielerusso.entities.Location</class>
         <class>danielerusso.entities.Concert</class>
         <class>danielerusso.entities.SoccerMatch</class>
-        <!--        <class>danielerusso.entities.AthleticsCompetition</class> -->
+        <class>danielerusso.entities.AthleticsCompetition</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4w3d4"/>
             <!-- Dopo l'ultimo slash inserisco il nome del database al quale voglio collegarmi (IL DB DEVE ESISTERE PERO') -->
