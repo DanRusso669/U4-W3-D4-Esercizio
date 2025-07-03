@@ -11,6 +11,9 @@ import java.util.List;
 
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 
+@NamedQuery(name = "findAllSoccerWonHome", query = "SELECT sm FROM SoccerMatch sm WHERE sm.homeTeam = sm.winner")
+@NamedQuery(name = "findAllSoccerWonAway", query = "SELECT sm FROM SoccerMatch sm WHERE sm.awayTeam = sm.winner")
+
 public abstract class Event {
     @Id
     @GeneratedValue
