@@ -32,13 +32,13 @@ public class Application {
         Person person2 = new Person("Giuseppe", "Verdi", "verdibeppe@gmail.com", LocalDate.of(1813, 10, 10), GenderType.MALE);
         Person person3 = new Person("Marie", "Curie", "curiemarie@gmail.com", LocalDate.of(1867, 11, 7), GenderType.FEMALE);
 
-        ld.save(location1);
-        ld.save(location2);
-        ld.save(location3);
-
-        pd.save(person1);
-        pd.save(person2);
-        pd.save(person3);
+//        ld.save(location1);
+//        ld.save(location2);
+//        ld.save(location3);
+//
+//        pd.save(person1);
+//        pd.save(person2);
+//        pd.save(person3);
 
         Location loc1 = ld.findById(1);
         Location loc2 = ld.findById(2);
@@ -52,13 +52,13 @@ public class Application {
         SoccerMatch soccerMatch2 = new SoccerMatch("Derby", LocalDate.of(2025, 11, 04), "Juventus-Inter", EventType.PUBBLIC, 50, loc2, "Juventus", "Torino", "Torino", 3, 2);
         SoccerMatch soccerMatch3 = new SoccerMatch("Derby", LocalDate.of(2025, 11, 04), "Genoa-Atalanta", EventType.PUBBLIC, 50, loc1, "Genoa", "Atalanta", null, 2, 2);
 
-        ed.save(soccerMatch1);
-        ed.save(soccerMatch2);
-        ed.save(soccerMatch3);
-        
-        ed.save(concert1);
-        ed.save(concert2);
-        ed.save(concert3);
+//        ed.save(soccerMatch1);
+//        ed.save(soccerMatch2);
+//        ed.save(soccerMatch3);
+//
+//        ed.save(concert1);
+//        ed.save(concert2);
+//        ed.save(concert3);
 
 
         ed.findAllConcert().forEach(System.out::println);
@@ -74,6 +74,8 @@ public class Application {
         ed.findSoccerMatchsWonHome().forEach(System.out::println);
         System.out.println("Won Away");
         ed.findSoccerMatchsWonAway().forEach(System.out::println);
+        System.out.println("Tie");
+        ed.findSoccerMatchsTied().forEach(System.out::println);
 
 
         em.close();

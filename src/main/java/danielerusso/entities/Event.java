@@ -13,6 +13,7 @@ import java.util.List;
 
 @NamedQuery(name = "findAllSoccerWonHome", query = "SELECT sm FROM SoccerMatch sm WHERE sm.homeTeam = sm.winner")
 @NamedQuery(name = "findAllSoccerWonAway", query = "SELECT sm FROM SoccerMatch sm WHERE sm.awayTeam = sm.winner")
+@NamedQuery(name = "findAllSoccerTied", query = "SELECT sm FROM SoccerMatch sm WHERE sm.winner IS NULL")
 
 public abstract class Event {
     @Id

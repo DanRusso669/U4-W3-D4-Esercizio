@@ -90,4 +90,9 @@ public class EventDAO {
         TypedQuery<SoccerMatch> query = entityManager.createNamedQuery("findAllSoccerWonAway", SoccerMatch.class);
         return query.getResultList();
     }
+
+    public List<SoccerMatch> findSoccerMatchsTied() {
+        TypedQuery<SoccerMatch> query = entityManager.createNamedQuery("findAllSoccerTied", SoccerMatch.class);
+        return query.getResultList();
+    }
 }
